@@ -163,8 +163,6 @@ The SQL `LEFT JOIN` operation merges two tables by matching rows based on a shar
 
 #### Example
 
-
-
 Table: `Employees`
 
 Font: [https://leetcode.com/problems/replace-employee-id-with-the-unique-identifier/](https://leetcode.com/problems/replace-employee-id-with-the-unique-identifier/)
@@ -235,6 +233,32 @@ LEFT JOIN EmployeeUNI eUni ON e.id = eUni.id
 | 2         | Meir     |
 | 3         | Winston  |
 ```
+
+
+
+
+
+### `DATEDIFF`
+
+a
+
+
+
+### `LAG and LEAD`
+
+a
+
+
+
+### `DATE_ADD`
+
+a
+
+
+
+### `Common Table Expression (CTE) (WITH Clause)`
+
+a
 
 
 
