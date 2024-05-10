@@ -2,7 +2,7 @@
 
 ### `AVG` and `ROUND`
 
-a
+aggregation&#x20;
 
 #### Example
 
