@@ -1,16 +1,17 @@
 # Kibana Script - Studies
 
 ### Get the month name
-Management > Advanced Setting >  Scaled date format > ["P1MT","MMM"] 
 
-``doc['my_field'].value  VS  params['_source']['my_field']``
+Management > Advanced Setting > Scaled date format > \["P1MT","MMM"]
 
-A script used in the update, update-by-query, or reindex API will have access to the *ctx* variable which exposes:
-ctx._source.my_field: Access to the document _source field.
+`doc['my_field'].value VS params['_source']['my_field']`
+
+A script used in the update, update-by-query, or reindex API will have access to the _ctx_ variable which exposes: ctx.\_source.my\_field: Access to the document \_source field.
 
 ctx.op: The operation that should be applied to the document: index or delete.
 
 ### Query SearchBar
+
 ```JSON
 {  
    "script":{  
@@ -24,8 +25,8 @@ ctx.op: The operation that should be applied to the document: index or delete.
 }
 ```
 
-
 ### Script Inline
+
 ```JSON
 "query": {
   "script": {
@@ -37,8 +38,9 @@ ctx.op: The operation that should be applied to the document: index or delete.
 }
 ```
 
-### Scripted Field 
-``` Java
+### Scripted Field
+
+```Java
 DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
 formatter.setTimeZone(TimeZone.getTimeZone("UTC"));
 
@@ -56,17 +58,17 @@ if (vencimento.getTime() < todayWithZeroTime.getTime() && doc['AdiantamentoSalar
     return false;
 }
 ```
+
 ### Scripted Field - Count number of days
 
 ```
 (doc['AdiantamentoSalarioDTO.dataPrevistaDesembolso'].value.getMillis() - doc['AdiantamentoSalarioDTO.dataRequisicao'].value.getMillis()) / 1000 / 60 / 60 / 24
 ```
 
-
-
-### Edit Query DSL 
+### Edit Query DSL
 
 **EX.: 1**
+
 ```JSON
 {
     "query": {
@@ -83,7 +85,9 @@ if (vencimento.getTime() < todayWithZeroTime.getTime() && doc['AdiantamentoSalar
     }
 }
 ```
-**EX.: 2 - *constant_score* Wraps a filter query and returns every matching document**
+
+**EX.: 2 - **_**constant\_score**_** Wraps a filter query and returns every matching document**
+
 ```
 {
   "constant_score": {
@@ -95,7 +99,9 @@ if (vencimento.getTime() < todayWithZeroTime.getTime() && doc['AdiantamentoSalar
   }
 }
 ```
+
 **EX.:3 - SQL Version x ElasticDSL Query**
+
 ```SQL
 SELECT COUNT(*) 
 FROM TABLE 
@@ -128,9 +134,11 @@ WHERE Message LIKE '%Communication  has failed.%'
 }
 
 ```
-PS: setting a *size* to zero b/c I only want to get back the hits values
 
-EX.: 4 -  Converting the expression A=a1 AND (B=b1 OR C=c1) in ElasticDSL Query
+PS: setting a _size_ to zero b/c I only want to get back the hits values
+
+EX.: 4 - Converting the expression A=a1 AND (B=b1 OR C=c1) in ElasticDSL Query
+
 ```JSON
 {
    "query": {
@@ -161,7 +169,9 @@ EX.: 4 -  Converting the expression A=a1 AND (B=b1 OR C=c1) in ElasticDSL Query
   }
 }
 ```
-**EX.: 5** -  Get all documents that have AdiantamentoSalarioDTO.dataRequisicao within certain range or the field is null (does not exist)
+
+**EX.: 5** - Get all documents that have AdiantamentoSalarioDTO.dataRequisicao within certain range or the field is null (does not exist)
+
 ```JSON
 {
   "query": {
@@ -209,7 +219,9 @@ EX.: 4 -  Converting the expression A=a1 AND (B=b1 OR C=c1) in ElasticDSL Query
   "size": 0
 }
 ```
-### Simple Sort  Query
+
+### Simple Sort Query
+
 ```JSON
 POST notify-xerpa-advanced-index/_search
 {
@@ -221,9 +233,11 @@ POST notify-xerpa-advanced-index/_search
    ]
 }
 ```
-### Query to Update Document 
 
-####  Inserting Field
+### Query to Update Document
+
+#### Inserting Field
+
 ```JSON
 POST notify-xerpa-advanced-index/_update_by_query
 { 
@@ -238,6 +252,7 @@ POST notify-xerpa-advanced-index/_update_by_query
    }
 }
 ```
+
 #### Update Fields Value
 
 ```json
@@ -256,7 +271,9 @@ POST notify-xerpa-advanced-index/_update_by_query
 
 
 ```
+
 #### Updade field - II
+
 ```JSON
 POST notify-xerpa-advanced-index/_delete_by_query
 { 
@@ -267,7 +284,9 @@ POST notify-xerpa-advanced-index/_delete_by_query
    }
 }
 ```
-#### Deleting field 
+
+#### Deleting field
+
 ```JSON
 POST notify-xerpa-advanced-index/_update_by_query
 { 
@@ -284,10 +303,7 @@ POST notify-xerpa-advanced-index/_update_by_query
 
 ```
 
-
 ## References
-- [How to Script Painless-ly in Elasticsearch](https://www.compose.com/articles/how-to-script-painless-ly-in-elasticsearch/)
-- [Script Fields](https://qbox.io/blog/how-to-painless-scripting-in-elasticsearch?utm_source=qbox.io&utm_medium=article&utm_campaign=advanced-methods-for-painless-scripting-with-elasticsearch-part-2%20https://qbox.io/blog/advanced-methods-painless-scripting-elasticsearch-syntax-params?utm_source=qbox.io&utm_medium=article&utm_campaign=advanced-methods-for-painless-scripting-with-elasticsearch-part-2%20https://qbox.io/blog/advanced-methods-for-painless-scripting-with-elasticsearch-part-2?utm_source=qbox.io&utm_medium=article&utm_campaign=painless-scripting-elasticsearch-kibana-scripted-fields%20https://qbox.io/blog/painless-scripting-elasticsearch-kibana-scripted-fields)
 
-
-
+* [How to Script Painless-ly in Elasticsearch](https://www.compose.com/articles/how-to-script-painless-ly-in-elasticsearch/)
+* [Script Fields](https://qbox.io/blog/how-to-painless-scripting-in-elasticsearch?utm\_source=qbox.io\&utm\_medium=article\&utm\_campaign=advanced-methods-for-painless-scripting-with-elasticsearch-part-2%20https://qbox.io/blog/advanced-methods-painless-scripting-elasticsearch-syntax-params?utm\_source=qbox.io\&utm\_medium=article\&utm\_campaign=advanced-methods-for-painless-scripting-with-elasticsearch-part-2%20https://qbox.io/blog/advanced-methods-for-painless-scripting-with-elasticsearch-part-2?utm\_source=qbox.io\&utm\_medium=article\&utm\_campaign=painless-scripting-elasticsearch-kibana-scripted-fields%20https://qbox.io/blog/painless-scripting-elasticsearch-kibana-scripted-fields)
