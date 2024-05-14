@@ -12,3 +12,5 @@
     * [Kibana Script - Studies](<ElasticSearch/Kibana/Kibana Scripts Queries.md>)
 * [Structured Query Language (SQL)](structured-query-language-sql/README.md)
   * [How JOIN works when 3 or more tables are involved.](structured-query-language-sql/how-join-works-when-3-or-more-tables-are-involved..md)
+* [Consistency Anomalies](consistency-anomalies.md)
+* [Isolation Levels](isolation-levels.md)
