@@ -37,8 +37,8 @@
 
 ### Reference
 
-\[1] **Vlad Mihalcea**. _JPA Entity Version Property and Hibernate_. **Disponível em:** [https://vladmihalcea.com/jpa-entity-version-property-hibernate/](https://vladmihalcea.com/jpa-entity-version-property-hibernate/). Acesso em: 11 maio 2024.
+\[1] MIHALCEA, Vlad. _JPA Entity Version Property and Hibernate_. **Disponível em:** [https://vladmihalcea.com/jpa-entity-version-property-hibernate/](https://vladmihalcea.com/jpa-entity-version-property-hibernate/). Acesso em: 11 maio 2024.
 
-\[2] **Vlad Mihalcea**. _A beginner’s guide to database locking and the lost update phenomena_. **Disponível em:** [https://vladmihalcea.com/a-beginners-guide-to-database-locking-and-the-lost-update-phenomena/](https://vladmihalcea.com/a-beginners-guide-to-database-locking-and-the-lost-update-phenomena/). Acesso em: 11 maio 2024.
+\[2] MIHALCEA, Vlad. _A beginner’s guide to database locking and the lost update phenomena_. **Disponível em:** [https://vladmihalcea.com/a-beginners-guide-to-database-locking-and-the-lost-update-phenomena/](https://vladmihalcea.com/a-beginners-guide-to-database-locking-and-the-lost-update-phenomena/). Acesso em: 11 maio 2024.
 
-\[3] **Vlad Mihalcea**. _A beginner’s guide to ACID and database transactions._ **Disponível em:** [https://vladmihalcea.com/a-beginners-guide-to-acid-and-database-transactions/](https://vladmihalcea.com/a-beginners-guide-to-acid-and-database-transactions/). Acesso em: 11 maio 2024.
+\[3] MIHALCEA, Vlad. _A beginner’s guide to ACID and database transactions._ **Disponível em:** [https://vladmihalcea.com/a-beginners-guide-to-acid-and-database-transactions/](https://vladmihalcea.com/a-beginners-guide-to-acid-and-database-transactions/). Acesso em: 11 maio 2024.
