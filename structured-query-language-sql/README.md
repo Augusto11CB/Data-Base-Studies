@@ -218,6 +218,27 @@ FROM table;
 
 
 
+### `DISTINCT`
+
+The COUNT(DISTINCT column\_name) function in SQL is used to count the number of distinct (unique) values in a specified column.
+
+
+
+#### Example
+
+font: [https://leetcode.com/problems/number-of-unique-subjects-taught-by-each-teacher/](https://leetcode.com/problems/number-of-unique-subjects-taught-by-each-teacher/)
+
+```sql
+SELECT t.teacher_id, COUNT(DISTINCT t.subject_id)
+FROM Teacher t
+GROUP BY t.teacher_id
+ORDER BY t.teacher_id ASC;
+
+// This query will return each teacher_id along with the count of distinct subject_id associated with that teacher_id
+```
+
+
+
 ### `LEFT JOIN`
 
 The SQL `LEFT JOIN` operation merges two tables by matching rows based on a shared column. It includes all matching records from both tables and also **those rows from the left table that don't have a match in the right table \[2]**.
