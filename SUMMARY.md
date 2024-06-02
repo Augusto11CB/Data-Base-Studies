@@ -8,6 +8,7 @@
 * [PostgreSQL](postgresql/README.md)
   * [PostgreSQL](<PostgreSQL/PostgreSQL Annotations.md>)
 * [ElasticSearch](elasticsearch/README.md)
+  * [Further Reading on ElasticSearch](elasticsearch/further-reading-on-elasticsearch.md)
   * [Kibana](elasticsearch/kibana/README.md)
     * [Kibana Script - Studies](<ElasticSearch/Kibana/Kibana Scripts Queries.md>)
 * [Structured Query Language (SQL)](structured-query-language-sql/README.md)
